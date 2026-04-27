@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Log in</h1>
+
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label for="username">Username</label>
+          <input
+            id="username"
+            type="text"
+            name="username"
+            required
+            autocomplete="username"
+            placeholder="you@example.com"
+          />
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input
+            id="password"
+            type="password"
+            name="password"
+            required
+            autocomplete="current-password"
+            placeholder="••••••••"
+          />
+        </div>
+
+        <!-- CAPTCHA widget -->
+        <div class="field">
+          <label for="captcha-input">Prove you're human</label>
+          <div class="captcha-widget">
+            <img id="captcha-img" src="" alt="CAPTCHA challenge" width="200" height="70" />
+            <button
+              type="button"
+              id="captcha-refresh"
+              aria-label="Get a new CAPTCHA challenge"
+              title="New challenge"
+            >↻</button>
+          </div>
+          <input
+            id="captcha-input"
+            type="text"
+            name="captcha"
+            required
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+            placeholder="Type the characters above"
+          />
+        </div>
+
+        <div id="message" class="message" role="alert" aria-live="polite" hidden></div>
+
+        <button type="submit" id="submit-btn">Log in</button>
+      </form>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
